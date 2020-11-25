@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        {% block head_css %}
+    <!-- Copy CSS from https://getbootstrap.com/docs/4.4/getting-started/introduction/#css -->
+        {% endblock %}
+        {% block head_js %}
+            <!-- Copy JavaScript from https://getbootstrap.com/docs/4.4/getting-started/introduction/#js -->
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+        Veuillez renseigner la classe à rajouter :)
+        
+         {{ form_start(form) }}
+            <div class="my-custom-class-for-errors">
+                {{ form_errors(form) }}
+            </div>
+
+            <div class="row">
+                <div class="col">
+                    {{ form_row(form.nom) }}
+                </div>
+                <div class="col">
+                    {{ form_row(form.niveau) }}
+                </div>
+            </div>
+        {{ form_end(form) }}
+        {% endblock %}
+        {% block javascripts %}{% endblock %}
+    </body>
+</html>
